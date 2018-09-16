@@ -65,11 +65,7 @@
                     <div class="row">
 
                         <div class="col-md-3">
-                            <a href=# id="amathystid"><img class="img-thumbnail" src="assets/images/amatista.png"></a>
-                        </div>
-
-                        <div class="col-md-3">
-                            <a href=# id="citrusid"><img class="img-thumbnail" src="assets/images/citrino.png"></a>
+                            <a href=# id="rubyid"><img class="img-thumbnail" src="assets/images/rubi.png"></a>
                         </div>
 
                         <div class="col-md-3">
@@ -77,16 +73,24 @@
                         </div>
 
                         <div class="col-md-3">
-                            <a href=# id="rubyid"><img class="img-thumbnail" src="assets/images/rubi.png"></a>
+                            <a href=# id="amathystid"><img class="img-thumbnail" src="assets/images/amatista.png"></a>
                         </div>
+
+                        <div class="col-md-3">
+                            <a href=# id="citrusid"><img class="img-thumbnail" src="assets/images/citrino.png"></a>
+                        </div>
+
+
+
+
 
                     </div>
 
                     <div class="row">
 
-                        <div class="col-md-1"></div>
+                        <div class="col-md-3"></div>
 
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <br>
                             <h4>Random Number: <span id="random-number"><strong></strong></span></h4>
                             <br>
@@ -94,7 +98,7 @@
 
                         </div>
 
-                        <div class="col-md-1"></div>
+                        <div class="col-md-3"></div>
 
                     </div>
 
@@ -122,101 +126,7 @@
     </div>
 
 
-    <script type="text/javascript">
-        // Declatartion of game variables.
-        var userNumber = 0;
-        var computerNumber = 0;
-        var win = 0;
-        var loss = 0;
-
-        // Declaration of cristal variables.
-        var rubyValue = 0;
-        var emeraldValue = 0;
-        var amathystValue = 0;
-        var citrusValue = 0;
-
-        //function used to choose random numbers for the cristals and computer
-        function randomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-
-        //function to check result
-        function score() {
-            if (userNumber > computerNumber) {
-                alert("You Lose");
-                loss++
-                $("#loss").text(loss);
-            }
-            else if (userNumber === computerNumber) {
-                alert("You Win");
-                win++
-                $("#win").text(win);
-            }
-            else {
-                $("#added-number").text(userNumber);
-            }
-        }
-
-        function initialize() {
-
-            //Set initia value of 0 for user and random number for computer
-            computerNumber = randomNumber(18, 120);
-            userNumber = 0;
-
-            //Set random values between 1 and 12 for the cristals
-            rubyNumber = randomNumber(1, 12);
-            emeraldNumber = randomNumber(1, 12);
-            amathystNumber = randomNumber(1, 12);
-            citrusNumber = randomNumber(1, 12);
-
-            $("#random-number").text(computerNumber);
-            $("#added-number").text(userNumber);
-
-            console.log(amathystNumber);
-            console.log(citrusNumber);
-            console.log(emeraldNumber);
-            console.log(rubyNumber);
-
-        }
-        initialize();
-
-        //When user clicks ruby
-        $("#rubyid").on("click", function () {
-            //add value to user number
-            userNumber += rubyNumber;
-            //check number and update score
-            score();
-
-        });
-
-        //When user clicks emerald
-        $("#emeraldid").on("click", function () {
-            //add value to user number
-            userNumber += emeraldNumber;
-            //check number and update score
-            score();
-
-        });
-
-        //When user clicks amathyst
-        $("#amathystid").on("click", function () {
-            //add value to user number
-            userNumber += amathystNumber;
-            //check number and update score
-            score();
-
-        });
-
-        //When user clicks ruby
-        $("#citrusid").on("click", function () {
-            //add value to user number
-            userNumber += citrusNumber;
-            //check number and update score
-            score();
-
-        });
-
-    </script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
     <div class="container">
         <footer class="fixed-bottom">
 
